@@ -1,0 +1,24 @@
+<% @page_title = "Update Video" %>
+
+<div class="btn" role="button"><%= link_to("<< Back to All Videos", videos_path, :class => 'back-link') %></div>
+
+<div class="videos edit">
+  <h2>Update Video Record</h2>
+
+  <%= form_for(@video) do |f| %>
+    <!--
+    **Don't have to spell out the whole 'create' action:
+     form_for(@video, :url => videos_path, :method => 'patch')
+    **form_for knows the way you update a form via resourceful routes is, by default, you patch a request to that url. But actually for external purposes Rails converts to a post request and does the behind the scenes switching on its own. Yay!
+    11.29.16: except now for some reason I need to be more explicit about paths.
+     -->
+
+<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Update Video") %>
+    </div>
+
+  <% end %>
+
+</div>

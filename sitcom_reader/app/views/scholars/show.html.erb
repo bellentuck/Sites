@@ -1,0 +1,38 @@
+<% @page_title = @scholar.name %>
+
+<div class="btn" role="button"><%= link_to("<< Back to List", scholars_path, :class => 'back-link') %></div>
+
+<div class="scholars show">
+  <h2>Scholar Record</h2>
+
+  <table summary="Scholar detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @scholar.name %></td>
+    </tr>
+    <tr>
+      <th>Job Title</th>
+      <td><%= @scholar.jobTitle %></td>
+    </tr>
+    <tr>
+      <th>Institutional Affiliation</th>
+      <td><%= @scholar.affiliation %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @scholar.email %></td>
+    </tr>
+    <tr>
+      <th>Featured Videos</th>
+      <td><%= @scholar.videos.pluck('DISTINCT headline') %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @scholar.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @scholar.updated_at %></td>
+    </tr>
+  <table>
+</div>

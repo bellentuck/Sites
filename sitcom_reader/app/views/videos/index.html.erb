@@ -1,0 +1,39 @@
+<!-- http://localhost:3000/videos -->
+<% @page_title = "All Videos" %>
+
+<div class="btn" role="button"><%= link_to("<< Admin Menu", admin_path, :class => 'back-link') %></div>
+
+<div class="videos index">
+  <h2>Videos</h2>
+
+  <!-- <%= image_tag('plus_sign.png', :size => '11x11', :alt => '+') %> -->
+  <div class="btn" id="add_new" role="button"><%= link_to("Add New Video", new_video_path, :class => 'action new') %></div>
+
+  <div><%= pluralize(@videos.size, 'video') %> found</div>
+
+  <table class="listing" summary="Video list">
+    <tr class="header">
+      <th>Headline</th>
+      <th>Vimeo URL</th>
+      <!-- <th>Permalink</th>
+      <th>Caption</th> -->
+      <th>Featured Scholars</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @videos.each do |video| %>
+    <tr>
+      <td><%= video.headline %></td>
+      <td><%= video.embedUrl %></td>
+      <!-- <td><%= video.permalink %></td>
+      <td><%= video.caption %></td> -->
+      <td><%= video.scholars.pluck('DISTINCT name') %></td>
+      <td class="actions">
+        <div class="btn" role="button"><%= link_to("View Record", video_path(video.id), :class => 'action show') %></div>
+        <div class="btn" role="button"><%= link_to("Edit", edit_video_path(video.id), :class => 'action edit') %></div>
+        <div class="btn" role="button"><%= link_to("Delete", delete_video_path(video.id), :class => 'action delete') %></div>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

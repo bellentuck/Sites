@@ -1,0 +1,39 @@
+<!-- http://localhost:3000/scholars -->
+<% @page_title = "All Scholars" %>
+
+<div class="btn" role="button"><%= link_to("<< Admin Menu", admin_path, :class => 'back-link') %></div>
+
+<div class="scholars index">
+  <h2>Scholars</h2>
+
+  <!-- <%= image_tag('plus_sign.png', :size => '11x11', :alt => '+') %> -->
+  <div class="btn" id="add_new" role="button"><%= link_to("Add New Scholar", new_scholar_path, :class => 'action new') %></div>
+
+  <div><%= pluralize(@scholars.size, 'scholar') %> found</div>
+
+  <table class="listing" summary="Scholar list">
+    <tr class="header">
+      <th>Name</th>
+      <th>Job Title</th>
+      <th>Institutional Affiliation</th>
+      <th>Email</th>
+      <th>Featured Videos</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @scholars.each do |scholar| %>
+    <tr>
+      <td><%= scholar.name %></td>
+      <td><%= scholar.jobTitle %></td>
+      <td><%= scholar.affiliation %></td>
+      <td><%= scholar.email %></td>
+      <td><%= scholar.videos.pluck('DISTINCT headline') %></td>
+      <td class="actions">
+        <div class="btn" role="button"><%= link_to("Show Record", scholar_path(scholar), :class => 'action show') %></div>
+        <div class="btn" role="button"><%= link_to("Edit Record", edit_scholar_path(scholar), :class => 'action edit') %></div>
+        <div class="btn" role="button"><%= link_to("Delete Record", delete_scholar_path(scholar), :class => 'action delete') %></div>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

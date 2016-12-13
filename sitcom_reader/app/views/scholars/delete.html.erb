@@ -1,0 +1,23 @@
+<% @page_title = "Remove Scholar Record" %>
+
+<div class="btn" role="button"><%= link_to("<< Back to List", scholars_path, :class => 'back-link') %></div>
+
+<div class="scholars delete">
+  <h2>Remove Scholar Record</h2>
+
+  <%= form_for(@scholar, :method => 'delete') do |f| %>
+    <!-- Don't have to specify url- :url => scholar_path(@scholar)
+    but do have to specify the method is 'delete'-->
+
+    <p>Click below to confirm: the record for</p>
+
+    <p class="reference-name"><%= f.object.name %></p>
+
+    <p>will be deleted.</p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete Scholar") %>
+    </div>
+
+  <% end %>
+</div>

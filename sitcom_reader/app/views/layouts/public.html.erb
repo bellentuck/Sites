@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sitcom Reader<%= " | #{@page_title}" if @page_title %></title>
+    <%= stylesheet_link_tag('application', :media => 'all') %>
+  </head>
+  <body itemscope itemtype="http://schema.org/CreativeWork">
+
+    <div id="header">
+      <h1><span itemprop="isPartOf">Sitcom Reader</span></h1>
+    </div>
+
+    <div id="main">
+
+
+
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div class="clear"></div>
+
+    </div>
+
+    <br />
+    <div id="footer" class="copyright container">
+    <div class="row">
+      <div class="col-xs-5">
+        <p id="copyright">&copy; <span itemprop="copyrightHolder">Mary Dalton</span></p>
+      </div>
+      <div class="col-xs-7" style="text-align:right;">
+        <p>Website courtesy build.zsr</p><meta itemprop="creator" content="Ben Ellentuck" />
+      </div>
+    </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<% @page_title = "Create Scholar Record" %>
+
+<div class="btn" role="button"><%= link_to("<< Back to List", scholars_path, :class => 'back-link') %></div>
+
+<div class="scholars new">
+  <h2>Create Scholar Record</h2>
+
+  <%= form_for(@scholar) do |f| %>
+    <!--
+    **Don't have to spell out the whole 'create' action:
+     form_for(@scholar, :url => scholars_path, :method => 'post')
+    **form_for knows the way you create a new form via resourceful routes is, by default, you post a request to that url.
+     -->
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Scholar") %>
+    </div>
+
+  <% end %>
+
+</div>

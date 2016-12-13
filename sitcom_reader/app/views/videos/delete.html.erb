@@ -1,0 +1,23 @@
+<% @page_title = "Delete Video" %>
+
+<div class="btn" role="button"><%= link_to("<< Back to List", videos_path, :class => 'back-link') %></div>
+
+<div class="videos delete">
+  <h2>Delete Video</h2>
+
+  <%= form_for(@video, :url => video_path, :method => 'delete') do |f| %>
+    <!-- Don't have to specify url- :url => video_path(@video)
+    but do have to specify the method is 'delete'-->
+
+    <p>Click below to confirm: the record for</p>
+
+    <p class="reference-name"><%= f.object.headline %></p>
+
+    <p>will be deleted.</p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete Video") %>
+    </div>
+
+  <% end %>
+</div>

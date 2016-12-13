@@ -1,0 +1,23 @@
+<% @page_title = "Create Section" %>
+
+<%= link_to("<< Back to List", sections_path(:page_id => @page.id), :class => 'back-link') %>
+
+<div class="sections new">
+  <h2>Create Section</h2>
+
+  <%= form_for(@section, :url => sections_path(:page_id => @page.id)) do |f| %>
+    <!--
+    **Don't have to spell out the whole 'create' action:
+     form_for(@section, :url => sections_path, :method => 'post')
+    **form_for knows the way you create a new form via resourceful routes is, by default, you post a request to that url.
+     -->
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Section") %>
+    </div>
+
+  <% end %>
+
+</div>

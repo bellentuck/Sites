@@ -1,0 +1,14 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "public";
+
+// /*
+// * DIRECTIVES:
+// * require_tree .  <-- "load in/req. all files included in stylesheets dir"
+// *= require public
+// *= require_self
+// *= require bootstrap-sprockets
+// *= require bootstrap
+// */

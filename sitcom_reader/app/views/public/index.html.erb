@@ -1,0 +1,41 @@
+<!-- <h1>Sitcom Reader: Video Companion Site</h1> -->
+
+<p>Welcome!</p>
+
+<% @page_title = "Second Edition" %>
+
+<div class="videos container-fluid">
+<div class="row">
+  <h2>Videos</h2>
+  <div><%= pluralize(@videos.size, 'video') %> found</div>
+  <br /><br />
+
+  <% @videos.each do |video|
+    uri = URI.parse(URI.encode(video.embedUrl.strip))
+    embed_code = VideoEmbed.embed(uri) %>
+  <div class="col-sm-6 col-md-4 col-lg-3">
+
+  <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+  <tr>
+    <td><object><%= %Q{#{embed_code}}.html_safe %></object></td>
+    <td><h3 class="video_title" itemprop="caption"><%= video.headline %></h3></td>
+    <!-- only a patchwork solution; want to refactor all this (t)here plucking -->
+    <td><p>Featuring:<span itemprop="actors">
+      <% featurees = video.scholars.pluck('DISTINCT name') %>
+      <%= featurees.size != 1 ? featurees[0] + ", " + featurees[1] : featurees[0] %>
+    </span></p></td>
+    <!-- <td><i><%= video.caption %></i></td><br /> -->
+    <td><p class="btn" role="button">
+      <%= link_to("View with transcript", public_show_path(video.permalink)) %>
+    </p></td>
+    <meta itemprop="productionCompany" content="Online @ WFU" />
+  </tr>
+  </div>
+
+  <br /><br /><br /><br />
+  </div>
+  <% end %>
+  </table>
+
+</div>
+</div>

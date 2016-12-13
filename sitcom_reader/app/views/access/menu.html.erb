@@ -1,0 +1,16 @@
+<% @page_title = "Admin Menu" %>
+
+<div class="menu">
+  <h2>Admin Menu</h2>
+  <div class="identity">Logged in as: <%= @username %></div>
+  <br />
+  <ul>
+    <li class="btn" role="button"><%= link_to("Manage Videos", videos_path)  %></li>
+    <br /><br />
+    <li class="btn" role="button"><%= link_to("Manage Scholars", scholars_path)  %></li>
+    <br /><br />
+    <li class="btn" role="button"><%= link_to("Manage Admin Users", admin_users_path)  %></li>
+    <br /><br />
+    <li class="btn" role="button"><%= link_to("Logout", access_logout_path)  %></li>
+  </ul>
+</div>

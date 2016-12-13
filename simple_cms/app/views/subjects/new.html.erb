@@ -1,0 +1,23 @@
+<% @page_title = "Create Subject" %>
+
+<%= link_to("<< Back to List", subjects_path, :class => 'back-link') %>
+
+<div class="subjects new">
+  <h2>Create Subject</h2>
+
+  <%= form_for(@subject) do |f| %>
+    <!--
+    **Don't have to spell out the whole 'create' action:
+     form_for(@subject, :url => subjects_path, :method => 'post')
+    **form_for knows the way you create a new form via resourceful routes is, by default, you post a request to that url.
+     -->
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Subject") %>
+    </div>
+
+  <% end %>
+
+</div>

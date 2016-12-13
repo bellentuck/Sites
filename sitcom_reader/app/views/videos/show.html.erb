@@ -1,0 +1,47 @@
+<% @page_title = @video.headline %>
+
+<div class="btn" role="button"><%= link_to("<< Back to List", videos_path, :class => 'back-link') %></div>
+
+<div class="videos show">
+  <h2>Show Video</h2>
+
+  <table summary="Video detail view">
+    <tr>
+      <th>Permalink</th>
+      <td><%= @video.permalink %></td>
+    </tr>
+    <tr>
+      <th>Headline</th>
+      <td><%= @video.headline %></td>
+    </tr>
+    <tr>
+      <th>Caption</th>
+      <td><%= @video.caption %></td>
+    </tr>
+    <tr>
+      <th>Featured Scholars</th>
+      <td><%= @video.scholars.pluck('DISTINCT name') %></td>
+    </tr>
+    <tr>
+      <th>Video</th>
+      <!-- ideally... -->
+      <!-- <iframe width="420" height="315"
+      src=embedUrl>
+      </iframe> -->
+      <!-- if not... -->
+      <td><%= %Q{#{@embed_code}}.html_safe %></td>
+    </tr>
+    <tr>
+      <th>Transcript</th>
+      <td><pre><%= @video.transcript %></pre></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @video.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @video.updated_at %></td>
+    </tr>
+  <table>
+</div>

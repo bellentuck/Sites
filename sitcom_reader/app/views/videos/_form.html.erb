@@ -1,0 +1,31 @@
+<%= error_messages_for(f.object) %>
+
+<table summary="Video form fields">
+  <tr>
+    <th>Title/Headline</th>
+    <td><%= f.text_field(:headline) %></td>
+  </tr>
+  <!-- <tr>
+    <th>Permalink</th>
+    <td><%= f.text_field(:permalink) %></td>
+  </tr> -->
+  <tr>
+    <th>Caption/Description</th>
+    <td><%= f.text_field(:caption) %></td>
+  </tr>
+  <tr>
+    <th>Vimeo URL</th>
+    <td><%= f.text_field(:embedUrl) %></td>
+  </tr>
+  <tr>
+    <th>Featured Scholars</th>
+    <td>
+      <%= select_tag "featured_scholars", options_from_collection_for_select(Scholar.all, 'id', 'name', @video.scholars.map{ |j| j.id }), :multiple => true %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Transcript</th>
+    <td><%= f.text_area(:transcript) %></td>
+  </tr>
+</table>

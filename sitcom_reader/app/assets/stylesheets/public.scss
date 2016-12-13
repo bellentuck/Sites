@@ -1,0 +1,93 @@
+// Place all the styles related to the Public controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "base";
+
+@import "modules/backgrounds";
+
+// /* Global */ + /* Lists */ --> see base.scss
+
+
+
+// /* Shared drop shadow styles */
+//
+//         .drop-shadow {
+//             position: relative;
+//             float:none;
+//             width:80%;
+//             padding:1em;
+//             margin:2em 10px 4em;
+//             background:#C7C7E4;
+//             -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//             -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//         }
+//
+//         .drop-shadow:before,
+//         .drop-shadow:after {
+//             content:"";
+//             position:absolute;
+//             z-index:-2;
+//         }
+//
+//         .drop-shadow p {
+//             font-size:16px;
+//             /*font-weight:bold;*/
+//         }
+//
+// /* Raised shadow - no pseudo-elements needed */
+//
+//         .raised {
+//             -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//             -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//             box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//         }
+//
+//
+// /* Folded corner box */
+//
+//
+// .note {
+//   position: relative;
+//   width: 30%;
+//   padding: 1em 1.5em;
+//   margin: 2em auto;
+//   color: #F9DFCF; /* used to be #fff  */
+//   background: #F9DFCD;
+//   overflow: hidden;
+// }
+//
+// .note:before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   border-width: 0 16px 16px 0;
+//   border-style: solid;
+//   border-color: #fff #fff #658E15 #658E15;
+//   background: #658E15;
+//   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+//   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+//   box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+//   /* Firefox 3.0 damage limitation */
+//   display: block; width: 0;
+// }
+//
+// .note.rounded {
+//   -moz-border-radius: 5px 0 5px 5px;
+//   border-radius: 5px 0 5px 5px;
+// }
+//
+// .note.rounded:before {
+//   border-width: 8px;
+//   border-color: #F9DFCF #F9DFCF transparent transparent;   /* used to be #fff for both */
+//   -moz-border-radius: 0 0 0 5px;
+//   border-radius: 0 0 0 5px;
+// }
+//
+// .note.orange {background:#F1C087;}
+// .note.orange:before {border-color:#F9DFCF #F9DFCF transparent transparent; background:transparent;}  /* used to be #fff for both */

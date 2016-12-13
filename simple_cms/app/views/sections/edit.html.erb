@@ -1,0 +1,23 @@
+<% @page_title = "Update Section" %>
+
+<%= link_to("<< Back to List", sections_path(:page_id => @page.id), :class => 'back-link') %>
+
+<div class="sections edit">
+  <h2>Update Section</h2>
+
+  <%= form_for(@section, :url => section_path(@section, :page_id => @page.id)) do |f| %>
+    <!--
+    **Don't have to spell out the whole 'create' action:
+     form_for(@section, :url => sections_path, :method => 'patch')
+    **form_for knows the way you update a form via resourceful routes is, by default, you patch a request to that url. But actually for external purposes Rails converts to a post request and does the behind the scenes switching on its own. Yay!
+     -->
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Update Section") %>
+    </div>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,26 @@
+<%= error_messages_for(f.object) %>
+
+<table summary="Scholar form fields">
+  <tr>
+    <th>Name</th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th>Job Title</th>
+    <td><%= f.text_field(:jobTitle) %></td>
+  </tr>
+  <tr>
+    <th>Institutional Affiliation</th>
+    <td><%= f.text_field(:affiliation) %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= f.text_field(:email) %></td>
+  </tr>
+  <tr>
+    <th>Featured Videos</th>
+    <td>
+      <%= select_tag "featured_videos", options_from_collection_for_select(Video.all, 'id', 'headline', @scholar.videos.map{ |j| j.id }), :multiple => true %>
+    </td>
+  </tr>
+</table>
