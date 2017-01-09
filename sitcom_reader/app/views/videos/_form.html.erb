@@ -1,9 +1,13 @@
 <%= error_messages_for(f.object) %>
 
+<style>
+    th, td { padding-bottom: 10px; }
+</style>
+
 <table summary="Video form fields">
   <tr>
     <th>Title/Headline</th>
-    <td><%= f.text_field(:headline) %></td>
+    <td><%= f.text_field(:headline, :size => 70) %></td>
   </tr>
   <!-- <tr>
     <th>Permalink</th>
@@ -11,11 +15,11 @@
   </tr> -->
   <tr>
     <th>Caption/Description</th>
-    <td><%= f.text_field(:caption) %></td>
+    <td><%= f.text_area(:caption) %></td>
   </tr>
   <tr>
     <th>Vimeo URL</th>
-    <td><%= f.text_field(:embedUrl) %></td>
+    <td><%= f.text_field(:embedUrl, :size => 70) %></td>
   </tr>
   <tr>
     <th>Featured Scholars</th>
@@ -23,7 +27,16 @@
       <%= select_tag "featured_scholars", options_from_collection_for_select(Scholar.all, 'id', 'name', @video.scholars.map{ |j| j.id }), :multiple => true %>
     </td>
   </tr>
-
+  <tr>
+    <th>Course Category</th>
+    <td>
+      <%= radio_button("video", "courseCategory", "Author Interviews") %>
+      <%= label_tag("Author Interviews", "Author Interviews") %>
+      <br />
+      <%= radio_button("video", "courseCategory", "Course Lectures") %>
+      <%= label_tag("Course Lectures", "Course Lectures") %>
+    </td>
+  </tr>
   <tr>
     <th>Transcript</th>
     <td><%= f.text_area(:transcript) %></td>

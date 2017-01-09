@@ -3,8 +3,13 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+
+# For Heroku, use psql as the database for Active Record
+# gem 'pg'
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -30,6 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'permalink_fu', '~> 1.0.0'
 # Use VideoEmbed.embed in views
 gem 'video_embed', '~> 0.1.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

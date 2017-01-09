@@ -11,8 +11,9 @@
 
   <div><%= pluralize(@scholars.size, 'scholar') %> found</div>
 
-  <table class="listing" summary="Scholar list">
-    <tr class="header">
+  <table class="table table-hover" summary="Scholar list">
+    <thead>
+    <tr>
       <th>Name</th>
       <th>Job Title</th>
       <th>Institutional Affiliation</th>
@@ -20,7 +21,8 @@
       <th>Featured Videos</th>
       <th>Actions</th>
     </tr>
-
+    </thead>
+    <tbody>
     <% @scholars.each do |scholar| %>
     <tr>
       <td><%= scholar.name %></td>
@@ -35,5 +37,6 @@
       </td>
     </tr>
     <% end %>
+    </tbody>
   </table>
 </div>

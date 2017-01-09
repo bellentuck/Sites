@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   # root route #
   root :to => 'public#index'
   get 'watch/:permalink', :to => 'public#show', :as => 'public_show'
+  get 'about', :to => 'public#about'
+  get 'interviews', :to => 'public#author_interviews'
+  get 'lectures', :to => 'public#course_lectures'
+  get 'critical_media_studies', :to => 'public#critical_media_studies_book'
 
   get 'admin', :to => 'access#menu'
   get 'access/menu'

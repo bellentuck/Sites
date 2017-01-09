@@ -1,10 +1,31 @@
 <% @page_title = @video.headline %>
 
 <div class="videos show" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
-  <h2 itemprop="caption"><%= @video.headline %></h2>
+  <h1 itemprop="headline"><%= @video.headline %></h1>
+
+  <!-- <div class="links container">
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-0">
+    <td><p class="btn" role="button" disabled="disabled">
+      <%= link_to("Download the Transcript", "#") %>
+    </p><br /><br /></td>
+    </div>
+    <div class="col-xs-2 col-xs-offset-6" style="text-align:right;">
+    <td><p class="btn" role="button" itemprop="citation">
+      <%= link_to("Buy the Book", "https://www.amazon.com/Sitcom-Reader-Second-America-Re-viewed/dp/1438461305/ref=pd_sbs_14_img_0?_encoding=UTF8&psc=1&refRID=G6B99JXN3C3GJ08PACXS") %>
+    </p><br /><br /></td>
+    </div>
+    <div class="col-xs-2 col-xs-offset-8">
+    <td><p class="btn" role="button" itemprop="embedUrl">
+      <%= link_to("Download the Video", @video.embedUrl) %>
+    </p><br /><br /></td>
+    </div>
+  </div>
+  </div> -->
+
+
 
   <div class="links container">
-  <!-- a nav menu of sorts -->
   <div class="row">
     <div class="col-xs-5 col-xs-offset-0 col-sm-2 col-sm-offset-0">
     <td><p class="btn" role="button" itemprop="embedUrl">
@@ -37,7 +58,7 @@
   </object>
 
   <h3 style="text-align:center;">Full Transcript</h3>
-  <p class="featurees" style="text-align:center;"><i>Featuring <span itemprop="actors"><%= @featurees %></span>.</i></p>
+  <!-- <p class="featurees" style="text-align:center;"><i>Featuring <span itemprop="actors"><%= @featurees %></span>.</i></p> -->
   <!-- <p><%= @video.caption %></p> -->
   <pre class="transcript" itemprop="transcript"><%= @video.transcript %></pre>
 

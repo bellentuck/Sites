@@ -6,6 +6,21 @@ class Video < ApplicationRecord
   scope :newest_first, lambda { order("created_at DESC") }
   scope :search, lambda { |query| where(["name LIKE ?", "%#{query}%"]) }
 
+  # filter searches by course category:
+  scope :category_search, lambda { |query| where(courseCategory: query) }
+
+  # scope :videos_culture_sitcom, lambda { Video.where(["courseCategory LIKE ?", "Culture and the Sitcom"]) }
+  #
+  # scope :videos_com_318, lambda { Video.where(["courseCategory LIKE ?", "COM 318 Videos"]) }
+
+
+  # radio_button("post", "category", "java")
+  #       <%= radio_button_tag(:courseCategory, "culture_and_the_sitcom") %>
+  #       <%= label_tag(:culture_and_the_sitcom, "Culture and the Sitcom") %>
+  #       <%= radio_button_tag(:courseCategory, "com_318_videos") %>
+  #       <%= label_tag(:com_318_videos, "COM 318 Videos") %>
+  #     </td>
+
   has_permalink :headline
   #acts_as_permalink from: :headline, max_length: 255
 

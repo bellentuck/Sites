@@ -9,7 +9,13 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
+
+# Should be:
+# PostgreSQL. Versions 9.1 and up are supported.
 default: &default
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   adapter: mysql2
   encoding: utf8
   pool: 5
@@ -50,5 +56,5 @@ test:
 production:
   <<: *default
   database: sitcom_reader_production
-  username: sitcom_reader
+  #username: sitcom_reader
   password: <%= ENV['SITCOM_READER_DATABASE_PASSWORD'] %>

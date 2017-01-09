@@ -42,7 +42,7 @@ class ScholarsController < ApplicationController
     #associate the selected videos to the scholar and create records in the join table
     if @scholar.update_attributes(scholar_params)
       flash[:notice] = "Scholar record updated successfully."
-      redirect_to(scholar_path(@scholar))
+      redirect_to(scholars_path)
     else
       render('new')
     end

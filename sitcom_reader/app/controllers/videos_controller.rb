@@ -46,7 +46,7 @@ class VideosController < ApplicationController
     #associate the selected scholars to the video and create records in the join table
     if @video.update_attributes(video_params)
       flash[:notice] = "Video record updated successfully."
-      redirect_to(video_path(@video))
+      redirect_to(videos_path)
     else
       render('new')
     end
@@ -66,7 +66,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:embedUrl, :headline, :caption, :transcript, scholars: [])
+    params.require(:video).permit(:embedUrl, :headline, :caption, :transcript, :courseCategory, scholars: [])
     # Ultimately would like to get some regexes in here to be able to insert
     #  a whole Vimeo codeblock and auto-break it up.
   end
