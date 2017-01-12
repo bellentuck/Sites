@@ -2,6 +2,59 @@ body, pre, .navbar.navbar-default.navbar-fixed-top {
      background-color: $peach;
      }
 
+/****** Menu *******/
+.navbar-default .navbar-nav > li > a {
+  color: $peach;
+}
+
+.menu-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  //width: 225px;
+  width: 125px;
+  height: 70px;
+  //border: 4px solid $orange;
+}
+
+#menu {
+  visibility: hidden; /* hides sub-menu */
+  opacity: 0;
+  position: absolute;
+  //top: 70%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-2em);
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.menu-parent:hover #menu {
+  visibility: visible; /* shows sub-menu */
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
+
+// /* presentational */
+// body { padding: 2%; font: 18px/1.4 sans-serif; }
+//
+// nav a { color: #E00; display: block; padding: 0.5em 1em; text-decoration: none; }
+// nav a:hover { color: #F55; }
+// nav ul,
+// nav ul li { list-style-type: none; padding: 0; margin: 0; }
+//
+// nav > ul { background: #EEE; text-align: center; }
+// nav > ul > li { display: inline-block; border-left: solid 1px #aaa; }
+// nav > ul > li:first-child { border-left: none; }
+//
+// .sub-menu {
+//   background: #DDD;
+// }
+
+
+
 p, pre {
   font-family: $font-main;
   font-size: $main;
@@ -39,44 +92,125 @@ h2 {
    padding: 6px 6px 6px 6px;
    }
 
+.menu-parent,
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover,
 .navbar > .container-fluid .navbar-brand {
   @extend h2;
   box-sizing: content-box;
-  font-size: 28px;
   margin-left: 0px;
   margin-top: 5px;
   text-shadow: 1px 1px 2px black;
 }
 
-.navbar.navbar-default.navbar-fixed-top {
-  height: 95px;
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,
+.navbar > .container-fluid .navbar-brand {
+  text-align: left;
 }
+
+.navbar.navbar-default.navbar-fixed-top {
+  height: 70px;
+}
+
 .brand-container {
     @extend .navbar.navbar-default.navbar-fixed-top;
     position:absolute;
     top: 0;
     left: 0;
-    width: 125px;
-    border: 4px solid $orange;
+    width: 50%;
+    //width: 125px;
+    //border: 4px solid $orange;
 }
 
 .nav {
-  background-color: $lightBlue;
+  background-color: $purpleBlue;
   border: 1px solid #999;
-  height: 120%; /*This is an example*/
-  //margin: 2px auto;
   width: 70%;
   float: right;
 }
+@media all and (max-width: 752px) {
+  .nav {
+    height: 515%;
+  }
+}
+  @media all and (min-width: 753px) {
+    .nav {
+      height: 588%;
+    }
+  }
 
-.nav li, .nav li:hover {
+.nav li,
+.nav li:hover,
+.navbar-default .navbar-nav > li > a:hover {
   color: $peach;
+  text-align: left;
 }
 
 .nav li:hover {
-  background-color: $purpleBlue;
+  background-color: $lightBlue;
+  width: 135px;
+}
+
+/* Area items */
+// #area-between {
+//   height: 200%;
+// }
+@media all and (max-width: 770px) {
+  .navbar-default .navbar-brand,
+  .navbar-default .navbar-brand:hover,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 20px;
+    width: 250px;
+  }
+  .menu-parent {
+    font-size: 20px;
+  }
+  #menu {
+    top: 42%;
+  }
+}
+@media all and (max-width: 970px) and (min-width: 771px) {
+  .navbar-default .navbar-brand,
+  .navbar-default .navbar-brand:hover,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 24px;
+    width: 600px;
+  }
+  .menu-parent {
+    font-size: 24px;
+  }
+  #menu {
+    top: 79%;
+  }
+}
+@media all and (max-width: 1299px) and (min-width: 971px) {
+  .navbar-default .navbar-brand,
+  .navbar-default .navbar-brand:hover,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 28px;
+    width: 650px;
+  }
+  .menu-parent {
+    font-size: 28px;
+  }
+  #menu {
+    top: 79%;
+  }
+}
+@media all and (min-width: 1300px) {
+  .navbar-default .navbar-brand,
+  .navbar-default .navbar-brand:hover,
+  .navbar > .container-fluid .navbar-brand {
+    font-size: 30px;
+    width: 1500px;
+  }
+  .menu-parent {
+    font-size: 30px;
+  }
+  #menu {
+    top: 79%;
+  }
 }
 
 .pictureArea {
@@ -90,10 +224,9 @@ h2 {
   margin-right: auto;
   width: 33%;
   height: 33%;
-
 }
 
-h3, .video_title {
+h3, .video_title, #about a {
    font-family: $font-header-smaller;
    text-align: left;
    font-size: 18px;
@@ -129,6 +262,8 @@ iframe {
   height: 500px;
 }
 
+/* Misc */
+
 .btn {
   background-color: $lightBlue;
   color: $peach;
@@ -157,6 +292,22 @@ input[type="radio"] {
     -ms-appearance: checkbox;     /* not currently supported */
 }
 
+/* About page */
+#about {
+  padding-left: 20px;
+}
+.bioPic img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+  height: 220px;
+  border: 4px solid $orange;
+  border-radius: 2px;
+}
+.bioPic h3 {
+  text-align: center;
+}
 
 
 // width: 600px / 960px * 100%;

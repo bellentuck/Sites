@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219160503) do
+ActiveRecord::Schema.define(version: 20170112190635) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",           default: "", null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20161219160503) do
     t.datetime "updated_at",                   null: false
     t.string   "permalink"
     t.string   "courseCategory"
+    t.integer  "bookChapter"
+    t.string   "bookSection"
   end
 
 end

@@ -23,6 +23,14 @@
       <td><%= @video.scholars.pluck('DISTINCT name') %></td>
     </tr>
     <tr>
+      <th>Book Chapter</th>
+      <td><%= @video.bookChapter %></td>
+    </tr>
+    <tr>
+      <th>Book Section</th>
+      <td><%= @video.bookSection %></td>
+    </tr>
+    <tr>
       <th>Course Category</th>
       <td><%= @video.courseCategory %></td>
     </tr>

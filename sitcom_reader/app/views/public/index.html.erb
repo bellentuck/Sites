@@ -1,6 +1,4 @@
-<!-- <h1>Sitcom Reader: Video Companion Site</h1> -->
 
-<% @page_title = "Second Edition" %>
 
 <div class="videos container-fluid">
 <div class="row">
@@ -18,7 +16,9 @@
       <iframe width="420" height="315" data-src="https://vimeo.com/163480589/95a3881d5d" frameborder="0" allowfullscreen></iframe>
     </td> -->
 
-    <td><object class="contentUrl" itemprop="contentUrl"><%= %Q{#{embed_code}}.html_safe %></object></td>
+    <td><object id="videoScreen" class="contentUrl" itemprop="contentUrl"><%= %Q{#{embed_code}}.html_safe %></object></td>
+
+    <div id="videoData">
     <td><h3 class="video_title" itemprop="caption"><%= video.headline %></h3></td>
     <!-- only a patchwork solution; want to refactor all this (t)here plucking -->
     <td><p>Featuring:<span itemprop="actors">
@@ -29,6 +29,8 @@
     <td><p class="btn" role="button">
       <%= link_to("View with transcript", public_show_path(video.permalink)) %>
     </p></td>
+    </div>
+
     <meta itemprop="productionCompany" content="Online @ WFU" />
   </tr>
   </div>

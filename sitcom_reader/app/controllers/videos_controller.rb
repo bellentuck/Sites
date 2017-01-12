@@ -66,7 +66,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:embedUrl, :headline, :caption, :transcript, :courseCategory, scholars: [])
+    params.require(:video).permit(:embedUrl, :headline, :caption, :transcript, :bookChapter, :bookSection, :courseCategory, scholars: [])
     # Ultimately would like to get some regexes in here to be able to insert
     #  a whole Vimeo codeblock and auto-break it up.
   end

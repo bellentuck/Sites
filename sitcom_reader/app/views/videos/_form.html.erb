@@ -38,6 +38,37 @@
     </td>
   </tr>
   <tr>
+    <th>Book Chapter</th>
+    <td>
+      <%= f.number_field(:bookChapter) %>
+    </td>
+  </tr>
+  <tr>
+    <th>Book Section</th>
+    <td>
+      <%= radio_button("video", "bookSection", "The 1950s") %>
+      <%= label_tag("The 1950s", "The 1950s") %>
+      <br />
+      <%= radio_button("video", "bookSection", "The 1960s") %>
+      <%= label_tag("The 1960s", "The 1960s") %>
+      <br />
+      <%= radio_button("video", "bookSection", "The 1970s") %>
+      <%= label_tag("The 1970s", "The 1970s") %>
+      <br />
+      <%= radio_button("video", "bookSection", "The 1980s") %>
+      <%= label_tag("The 1980s", "The 1980s") %>
+      <br />
+      <%= radio_button("video", "bookSection", "The 1990s") %>
+      <%= label_tag("The 1990s", "The 1990s") %>
+      <br />
+      <%= radio_button("video", "bookSection", "The 2000s") %>
+      <%= label_tag("The 2000s", "The 2000s") %>
+      <br />
+      <%= radio_button("video", "bookSection", "The 2010s") %>
+      <%= label_tag("The 2010s", "The 2010s") %>
+    </td>
+  </tr>
+  <tr>
     <th>Transcript</th>
     <td><%= f.text_area(:transcript) %></td>
   </tr>
