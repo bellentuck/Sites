@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>The Sitcom Reader:  A Companion Website<%= " | #{@page_title}" if @page_title %></title>
     <%= stylesheet_link_tag('application', :media => 'all') %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body itemscope itemtype="http://schema.org/CreativeWork">
