@@ -20,8 +20,11 @@
       <th>Caption</th> -->
       <th>Featured Scholars</th>
       <th>Book Chapter</th>
+      <th>Chapter Title</th>
       <th>Book Section (Decade)</th>
       <th>Course Category</th>
+      <th>Transcript Google Doc File ID</th>
+      <th>Visible</th>
       <th>Actions</th>
     </tr>
     </thead>
@@ -34,8 +37,11 @@
       <td><%= video.caption %></td> -->
       <td><%= video.scholars.pluck('DISTINCT name') %></td>
       <td><%= video.bookChapter %></td>
+      <td><%= video.bookChapterTitle %></td>
       <td><%= video.bookSection %></td>
       <td><%= video.courseCategory %></td>
+      <td><%= video.transcriptId %></td>
+      <td><%= video.visible %></td>
       <td class="actions">
         <div class="btn" role="button"><%= link_to("View Record", video_path(video.id), :class => 'action show') %></div>
         <div class="btn" role="button"><%= link_to("Edit", edit_video_path(video.id), :class => 'action edit') %></div>

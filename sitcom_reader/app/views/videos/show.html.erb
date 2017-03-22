@@ -23,16 +23,24 @@
       <td><%= @video.scholars.pluck('DISTINCT name') %></td>
     </tr>
     <tr>
-      <th>Book Chapter</th>
+      <th>Book Chapter (if applicable)</th>
       <td><%= @video.bookChapter %></td>
     </tr>
     <tr>
-      <th>Book Section</th>
+      <th>Chapter Title (if applicable)</th>
+      <td><%= @video.bookChapterTitle %></td>
+    </tr>
+    <tr>
+      <th>Book Section (if applicable)</th>
       <td><%= @video.bookSection %></td>
     </tr>
     <tr>
       <th>Course Category</th>
       <td><%= @video.courseCategory %></td>
+    </tr>
+    <tr>
+      <th>Visible</th>
+      <td><%= @video.visible %></td>
     </tr>
     <tr>
       <th>Video</th>
@@ -44,8 +52,8 @@
       <td><%= %Q{#{@embed_code}}.html_safe %></td>
     </tr>
     <tr>
-      <th>Transcript</th>
-      <td><pre><%= @video.transcript %></pre></td>
+      <th>Transcript Google Doc File ID</th>
+      <td><pre><%= @video.transcriptId %></pre></td>
     </tr>
     <tr>
       <th>Created</th>

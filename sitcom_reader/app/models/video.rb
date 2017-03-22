@@ -2,12 +2,25 @@ class Video < ApplicationRecord
 
   has_and_belongs_to_many :scholars
 
+  scope :visible, lambda { where(:visible => true) }
+  scope :invisible, lambda { where(:visible => false) }
   scope :sorted, lambda { order("headline ASC") }
   scope :newest_first, lambda { order("created_at DESC") }
   scope :search, lambda { |query| where(["name LIKE ?", "%#{query}%"]) }
 
   # filter searches by course category:
   scope :category_search, lambda { |query| where(courseCategory: query) }
+
+  # get videos corresponding to articles about a particular decade
+  scope :decade_search, lambda { |query| where(bookSection: query) }
+
+  # get particular titles
+  scope :title_search, lambda { |query| where(headline: query) }
+
+  # order book Chapters
+  scope :book_order, lambda { order("bookChapter ASC") }
+
+
 
   # scope :videos_culture_sitcom, lambda { Video.where(["courseCategory LIKE ?", "Culture and the Sitcom"]) }
   #

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   # root route #
-  root :to => 'public#index'
+  #root :to => 'public#index'
+  root :to => 'public#sitcom_reader_book'
   get 'watch/:permalink', :to => 'public#show', :as => 'public_show'
   get 'about', :to => 'public#about'
   get 'interviews', :to => 'public#author_interviews'

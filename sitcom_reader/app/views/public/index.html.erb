@@ -1,12 +1,14 @@
-
-
 <div class="videos container-fluid">
 <div class="row">
   <h1 id="header">All Videos</h1>
 
   <br /><br />
 
-  <% @videos.each do |video|
+<iframe src="https://docs.google.com/viewer?srcid=13eQRheaVpLULbQQiTPxq5nd-AB8ZO0DQLm__8Jtuh2E&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="425px" height="550px"></iframe>
+
+  <!-- @videos.sample(100) -->
+  <!-- enable sample w/ replacement to make for longer video list -->
+  <% 200.times.map{ @videos.sample }.each do |video|
     uri = URI.parse(URI.encode(video.embedUrl.strip))
     embed_code = VideoEmbed.embed(uri) %>
   <div class="col-sm-6 col-md-4 col-lg-3">

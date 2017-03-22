@@ -2,11 +2,19 @@
 
 <% @page_title = "Second Edition" %>
 
-<div class="videos container-fluid">
-<div class="row">
+
   <h1 id="header">Course Lectures</h1>
 
   <br /><br />
+
+  <div class="preface">
+    <p>Here are a few additional videos I developed for online use to help students understand some of the concepts discussed in chapters of <i>The Sitcom Reader</i>.<br /><br />If they are helpful to you and your students, feel free to use them.</p>
+  </div>
+
+  <br /><br />
+
+<div class="videos container-fluid">
+<div class="row" id="buttonRow">
 
   <% @videos_com_318.each do |video|
     uri = URI.parse(URI.encode(video.embedUrl.strip))
@@ -26,8 +34,9 @@
       <%= featurees.size != 1 ? featurees[0] + ", " + featurees[1] : featurees[0] %>
     </span></p></td>
     <!-- <td><i><%= video.caption %></i></td><br /> -->
-    <td><p class="btn" role="button">
-      <%= link_to("View with transcript", public_show_path(video.permalink)) %>
+    <td><p class="btn" id="transcript-btn" role="button">
+      <%= link_to("View with transcript", public_show_path(video.permalink),
+      :id => "transcript-link") %>
     </p></td>
     <meta itemprop="productionCompany" content="Online @ WFU" />
   </tr>

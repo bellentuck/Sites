@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112190635) do
+ActiveRecord::Schema.define(version: 20170125151615) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",           default: "", null: false
@@ -39,13 +39,15 @@ ActiveRecord::Schema.define(version: 20170112190635) do
     t.string   "embedUrl"
     t.string   "headline"
     t.string   "caption"
-    t.text     "transcript",     limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "permalink"
     t.string   "courseCategory"
     t.integer  "bookChapter"
     t.string   "bookSection"
+    t.string   "bookChapterTitle"
+    t.boolean  "visible",          default: true
+    t.string   "transcriptId"
   end
 
 end

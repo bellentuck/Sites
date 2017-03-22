@@ -38,13 +38,17 @@
     </td>
   </tr>
   <tr>
-    <th>Book Chapter</th>
+    <th>Book Chapter (if applicable)</th>
     <td>
       <%= f.number_field(:bookChapter) %>
     </td>
   </tr>
   <tr>
-    <th>Book Section</th>
+    <th>Chapter Title (if applicable)</th>
+    <td class="editable"><%= f.text_field(:bookChapterTitle, :size => 70) %></td>
+  </tr>
+  <tr>
+    <th>Book Section (if applicable)</th>
     <td>
       <%= radio_button("video", "bookSection", "The 1950s") %>
       <%= label_tag("The 1950s", "The 1950s") %>
@@ -69,7 +73,17 @@
     </td>
   </tr>
   <tr>
-    <th>Transcript</th>
-    <td><%= f.text_area(:transcript) %></td>
+    <th>Transcript Google Doc File ID</th>
+    <td><%= f.text_field(:transcriptId, :size => 70) %></td>
+  </tr>
+  <tr>
+    <th>Visible</th>
+    <td>
+      <%= radio_button("video", "visible", true) %>
+      <%= label_tag("True", true) %>
+      <br />
+      <%= radio_button("video", "visible", false) %>
+      <%= label_tag("False", false) %>
+    </td>
   </tr>
 </table>

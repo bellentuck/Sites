@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+// Buttons
+document.getElementById("buttonRow").addEventListener("click", function(e) {
+	if(e.target && e.target.attributes.role.nodeValue === "button") {
+		window.location = e.target.firstElementChild.href;
+	}
+}, false);

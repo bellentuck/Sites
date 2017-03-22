@@ -1,0 +1,69 @@
+<!-- alternate version -->
+
+<% @page_title = "Second Edition" %>
+
+<h1 id="header" style="text-align:left;">Author Interviews:<br />Speaking with <i>Sitcom Reader</i> Contributors</h1>
+
+<div class="videos container-fluid">
+<div class="row">
+  <br /><br />
+  <% @intro_vids.each do |video|
+    uri = URI.parse(URI.encode(video.embedUrl.strip))
+    embed_code = VideoEmbed.embed(uri) %>
+  <div class="col-sm-6 col-md-4 col-lg-3">
+  <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+  <tr>
+    <td><object class="contentUrl" itemprop="contentUrl"><%= %Q{#{embed_code}}.html_safe %></object></td>
+    <td><h3 class="video_title" itemprop="caption"><%= video.headline %></h3></td>
+    <td><p>Featuring:<span itemprop="actors">
+      <% featurees = video.scholars.pluck('DISTINCT name') %>
+      <%= featurees.size != 1 ? featurees[0] + ", " + featurees[1] : featurees[0] %>
+    </span></p></td>
+    <td><p class="btn" role="button">
+      <%= link_to("View with transcript", public_show_path(video.permalink)) %>
+    </p></td>
+    <meta itemprop="productionCompany" content="Online @ WFU" />
+  </tr>
+  </div>
+  <br /><br /><br /><br />
+  </div>
+  <% end %>
+  <h2>Browse by decade:</h2>
+
+</div>
+
+
+<% ["The 1950s", "The 1960s", "The 1970s", "The 1980s", "The 1990s", "The 2000s", "The 2010s"].each do |decade| %>
+  <div class="row">
+  <br /><br />
+  <div class="decade"><h2><%= decade %></h2>
+  <div id="vids">
+  <% @decades.values_at(decade)[0].each do |video|
+    uri = URI.parse(URI.encode(video.embedUrl.strip))
+    embed_code = VideoEmbed.embed(uri) %>
+  <div class="col-sm-6 col-md-4 col-lg-3">
+  <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+  <tr>
+    <td><object class="contentUrl" itemprop="contentUrl"><%= %Q{#{embed_code}}.html_safe %></object></td>
+    <td><h3 class="video_title" itemprop="caption"><%= video.headline %></h3></td>
+    <td><p>Featuring:<span itemprop="actors">
+      <% featurees = video.scholars.pluck('DISTINCT name') %>
+      <%= featurees.size != 1 ? featurees[0] + ", " + featurees[1] : featurees[0] %>
+    </span></p></td>
+    <td><p class="btn" role="button">
+      <%= link_to("View with transcript", public_show_path(video.permalink)) %>
+    </p></td>
+    <meta itemprop="productionCompany" content="Online @ WFU" />
+  </tr>
+  </div>
+  <br /><br /><br /><br />
+  </div>
+  <% end %>
+</div>
+</div>
+</div>
+<% end %>
+
+</div>
+
+<script src="https://raw.githubusercontent.com/ressio/lazy-load-xt/master/dist/jquery.lazyloadxt.extra.min.js"></script>
