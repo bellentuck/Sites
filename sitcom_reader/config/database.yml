@@ -55,6 +55,8 @@ test:
 #
 production:
   <<: *default
-  database: sitcom_reader_production
-  #username: sitcom_reader
-  password: <%= ENV['SITCOM_READER_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: sitecom_production
+  username: sitecom
+  password: <%= ENV['SITECOM_DATABASE_PASSWORD'] %>
