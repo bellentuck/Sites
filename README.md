@@ -2,16 +2,14 @@
 Ya know... "web" sites
 
 
+Right now stuff is scattered between here and DH-demos, but I hope to combine in a coherent way. Perhaps eventually 'Sites' will be RoR-centric and 'DH-demos' will be more Jupyter-centric.
 
+...the eventual idea being to have...
 
-...the eventual idea being to have... 
+- repo for WP themes and plugins: TLM, 18cC(?), misc
 
-(1) repo for WP themes and plugins: TLM, 18cC(?), misc
+- repo for Rulers of Venice
 
-(2) repo for PHP-based site(s): Rulers of Venice
+- repo for Sitcom Reader
 
-(3) repo for Ruby-based site(s): simple CMS, Sitcom Reader
-
-(4) repo for JS-based sites(s): simple fullJS site, ideally TLM 2.0
-
-(5) seo repo?: 18cC (best practices user's guide)
+- SEO repo?: 18cC (best practices user's guide) - qua "DH Cookbook"
